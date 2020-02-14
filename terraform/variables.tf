@@ -1,26 +1,28 @@
-variable "region" {}
+variable "region" {
+  default = "ap-southeast-2"
+}
 
 variable "tags" {
-  type = "map"
+  type = map(string)
 
   default = {
-    "service"    = "haomingyin.com"
+    "service"    = "iaceit.com"
     "created-by" = "terraform"
-    "owner"      = "haoming.yin"
+    "owner"      = "iaceit.com"
     "repo"       = "terraform.aws-secrets"
   }
 }
 
-variable "key_pair_path" {}
+variable "key_pair_path" {
+  default = "./aws-shared-key.pub"
+
+}
 
 variable "db_password" {}
 
-variable "cloudflare_email" {}
+# variable "cloudflare_email" {}
 
-variable "cloudflare_key" {}
+# variable "cloudflare_key" {}
 
-variable "smtp_user" {}
+# variable "smtp_user" {}
 
-variable "smtp_password" {}
-
-variable "smtp_from" {}
