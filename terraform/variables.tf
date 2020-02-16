@@ -15,14 +15,12 @@ variable "tags" {
 
 variable "key_pair_path" {
   default = "./aws-shared-key.pub"
-
 }
 
-variable "db_password" {}
+variable "ssm_items" {
+  type = list(list(string))
 
-# variable "cloudflare_email" {}
-
-# variable "cloudflare_key" {}
-
-# variable "smtp_user" {}
-
+  default = [
+    ["key_name", "secret_value"]
+  ]
+}
